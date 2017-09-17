@@ -1,3 +1,5 @@
+import re
+
 class Mock():
     def __init__(self, req, res):
         self.req = Req(
@@ -18,6 +20,7 @@ class Req():
         self.method = method
         self.headers = headers
         self.body = body
+        self.urlpath = re.sub('(^[^:\/]*:\/\/[^\/]*)|(^[^{}]*{{[^{}]+}})', '', self.url)
 
 class Res():
     def __init__(self, body, headers, status):

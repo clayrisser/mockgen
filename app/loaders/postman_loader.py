@@ -1,5 +1,5 @@
-from mock_service import Mock
 from pydash import _
+from app.services.mock_service import Mock
 
 def tranpose(data):
     reqs = list()
@@ -19,7 +19,7 @@ def tranpose(data):
             res={
                 'status': response['status'],
                 'headers': transpose_res_headers(response['headers']),
-                'body': response['text']
+                'body': response['text'][:len(response['text']) - 1]
             }
         ))
     return reqs

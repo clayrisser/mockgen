@@ -1,12 +1,12 @@
 import re
 import json
 import requests
-import postman_service
+from app.loaders import postman_loader
 
 def load(loader, source):
     data = load_data(source)
     if loader == 'postman':
-        return postman_service.tranpose(data)
+        return postman_loader.tranpose(data)
 
 def load_data(source):
     matches = re.findall(r'^https?:\/\/', source)
