@@ -4,7 +4,7 @@ CWD := $(shell pwd)
 all: env
 
 start:
-	@python ./dot/ --help
+	@python ./app/ --help
 
 env:
 	@virtualenv env
@@ -28,5 +28,5 @@ publish: dist
 
 .PHONY: clean
 clean:
-	-@rm -rf ./env ./dist ./build ./dotcli.egg-info ./*/*.pyc ./*/*/*.pyc &>/dev/null || true
+	-@rm -rf ./env ./dist ./build ./mockgen.egg-info ./*/*.pyc ./*/*/*.pyc &>/dev/null || true
 	@echo cleaned
