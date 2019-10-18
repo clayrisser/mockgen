@@ -5,5 +5,5 @@ idna==2.6
 Jinja2==2.9.6
 MarkupSafe==1.0
 pydash==4.2.1
-requests==2.18.4
+requests==2.20.0
 urllib3==1.22
